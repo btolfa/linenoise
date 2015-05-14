@@ -111,7 +111,12 @@
 #else
 /* Microsoft headers don't like old POSIX names */
 #define strdup _strdup
+/* MSVC 2015 */
+#if _MSC_VER>=1900
+#define STDC99
+#else
 #define snprintf _snprintf
+#endif
 #endif
 #else
 #include <termios.h>
